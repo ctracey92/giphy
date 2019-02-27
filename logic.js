@@ -12,3 +12,7 @@ function displayGifs (){
         console.log(response);
     })
 }
+
+function renderButtons(){
+    
+}
