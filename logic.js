@@ -1,5 +1,5 @@
 //Starting Gifs array
-var topics = ["Avengers","Spider-Man","Batman","Superman"]
+var topics = ["Avengers","Spider-Man","Batman","Superman"];
 
 //Function that displays the Gifs
 function displayGifs (){
@@ -35,8 +35,13 @@ function displayGifs (){
             var p = $("<p>").text("Rating: " + rating);
 
             var gifImage = $("<img>");
+            
 
-            gifImage.attr("src" , results[i].images.fixed_height.url);
+            gifImage.attr("src" , results[i].images.fixed_height_still.url);
+            gifImage.attr("data-still" , results[i].images.fixed_height_still.url);
+            gifImage.attr("data-animate" , results[i].images.fixed_height.url);
+            gifImage.attr("data-state" , "still");
+            gifImage.attr( "id" , "gifImages");
 
             gifDiv.prepend(p);
             gifDiv.prepend(gifImage);
@@ -44,9 +49,8 @@ function displayGifs (){
             $("#gifs-view").prepend(gifDiv);
         }
 
-
     })
-}
+};
 
 //Render buttons function that will display them on the page
 function renderButtons(){
@@ -62,10 +66,33 @@ function renderButtons(){
         gifButtons.text(topics[i]);
         $("#buttons-view").append(gifButtons);
     }
-}
+};
+ 
+
+
+var n = 0;
+
+function clicker () {
+    var state = $(this).attr("data-state");
+    console.log(state);
+    
+    if (state === "still"){
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    }
+    else{
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+      n++;
+    console.log(n);
+    }
+ };
+
+
+$(document).on("click", "#gifImages", clicker);
 
 //On click of the add-gifs function adds another button
-$("#add-gifs").on("click", function (event){
+$("#add-gifs").click("on", function (event){
     event.preventDefault();
 
     var gif = $("#gifs-input").val().trim();
@@ -73,7 +100,7 @@ $("#add-gifs").on("click", function (event){
     topics.push(gif);
 
     renderButtons();
-})
+});
 
 //On click of the gif buttons displays the gifs by running the function.
 $(document).on("click", ".gifs", displayGifs);
