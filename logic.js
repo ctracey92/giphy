@@ -58,6 +58,10 @@ function renderButtons(){
     //Emptys the button div before running the function so that they arent duplicated
     $("#buttons-view").empty();   
 
+   //Clears the Search bar 
+    $("#gifs-input").val("");
+
+
     //Runs a for loop that created the buttons and assigns them values/class/text and such
     for (var i = 0; i < topics.length; i++){
         var gifButtons = $("<button>");
@@ -91,6 +95,8 @@ function clicker () {
 
 $(document).on("click", "#gifImages", clicker);
 
+
+
 //On click of the add-gifs function adds another button
 $("#add-gifs").click("on", function (event){
     event.preventDefault();
@@ -100,6 +106,8 @@ $("#add-gifs").click("on", function (event){
     topics.push(gif);
 
     renderButtons();
+
+    
 });
 
 //On click of the gif buttons displays the gifs by running the function.
