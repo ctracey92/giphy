@@ -65,6 +65,7 @@ function renderButtons(){
     //Runs a for loop that created the buttons and assigns them values/class/text and such
     for (var i = 0; i < topics.length; i++){
         var gifButtons = $("<button>");
+        gifButtons.addClass("btn btn-primary")
         gifButtons.addClass("gifs");
         gifButtons.attr("data-name", topics[i]);
         gifButtons.text(topics[i]);

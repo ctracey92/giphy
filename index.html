@@ -10,21 +10,38 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Gifs Galore!</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" id="gifs-input" placeholder="Add a Gif!" aria-label="Add a Gif!">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="add-gifs" type="submit">Add It!</button>
+        </form>
+      </nav>
+
+
 <div class="container">
-<h1>Gifs Galore</h1>
+ <div class="row">
+        <h1>Gifs Galore</h1>
+  </div> 
 
-<div id="buttons-view"></div>
-
-<form id="gifs-form">
-  <label for="gifs-input">Add a gif button!</label>
-  <input type="text" id="gifs-input"><br>
-
-
-  <input id="add-gifs" type="submit" value="Add a gif button!">
-</form>
-<div id="gifs-view"></div>
-
-
+  <div class="row">
+      <div class="col-9-md">
+        <div id="buttons-view"></div>
+        <div id="gifs-view"></div>
+      </div>
+      
+          
+          
+          
+          <div class="col-3-md">
+            <!-- <form id="gifs-form">
+              <label for="gifs-input">Add a gif button!</label>
+              <input type="text" id="gifs-input"><br>
+              <input id="add-gifs" type="submit" value="Add It!">
+            </form>       -->
+          </div>
+     
+  </div>
 
 
 </div>
