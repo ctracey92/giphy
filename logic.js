@@ -1,5 +1,5 @@
 //Starting Gifs array
-var topics = ["Avengers","Spider-Man","Batman","Superman"];
+var topics = ["Avengers","Spider-Man","Batman","Superman", "Doctor Strange", "Green Lantern", "Wonder Woman"];
 
 //Function that displays the Gifs
 function displayGifs (){
@@ -10,7 +10,7 @@ function displayGifs (){
     var gifs = $(this).attr("data-name");
 
     //Sets the variable for the query URL based on user input
-    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=cV9VuIm8aO4h04UWMKe0F2FUNMNPorMs&q=" + gifs + "&limit=10&offset=0&rating=G&lang=e";
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=cV9VuIm8aO4h04UWMKe0F2FUNMNPorMs&q=" + gifs + "&limit=10&offset=0&rating=pg-13&lang=e";
 
 
     //Makes the AJAX request
