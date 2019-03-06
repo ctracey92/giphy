@@ -1,6 +1,5 @@
 # giphy
 
-
 Student Contributors
 @ctracey92
 
